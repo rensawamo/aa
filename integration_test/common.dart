@@ -1,4 +1,4 @@
-import 'package:e2e_app/main.dart' as app_main;
+import '../lib/main.dart' as app_main;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:patrol/patrol.dart';
 

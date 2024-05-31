@@ -1,4 +1,4 @@
-import 'package:e2e_app/keys.dart';
+import 'keys.dart';
 import 'package:flutter/material.dart';
 
 class ScrollingScreen extends StatelessWidget {

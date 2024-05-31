@@ -1,12 +1,13 @@
-import 'package:e2e_app/loading_screen.dart';
-import 'package:e2e_app/location_screen.dart';
-import 'package:e2e_app/notifications_screen.dart';
-import 'package:e2e_app/overlay_screen.dart';
-import 'package:e2e_app/permissions_screen.dart';
-import 'package:e2e_app/scrolling_screen.dart';
-import 'package:e2e_app/webview_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
+import 'package:patrol_integ/loading_screen.dart';
+import 'package:patrol_integ/location_screen.dart';
+import 'package:patrol_integ/notifications_screen.dart';
+import 'package:patrol_integ/overlay_screen.dart';
+import 'package:patrol_integ/permissions_screen.dart';
+import 'package:patrol_integ/scrolling_screen.dart';
+import 'package:patrol_integ/webview_screen.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
