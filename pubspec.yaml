@@ -11,21 +11,22 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  patrol: ^3.6.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
   flutter_lints: ^3.0.0
-  patrol_finders: ^2.0.2
+  patrol: ^3.7.2
+  patrol_finders: 2.1.2
 
 flutter:
   uses-material-design: true
 
 
 patrol:
-  patrol:
-  app_name: My App
+  app_name: patrol_integ
   android:
     package_name: com.example.patrol_integ
   ios:
