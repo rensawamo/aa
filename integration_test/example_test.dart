@@ -1,27 +1,32 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:patrol/patrol.dart';
+
+import 'common.dart';
 
 void main() {
-  patrolTest(
-    'counter state is the same after going to home and switching apps',
-    ($) async {
-      // Replace later with your app's main widget
-      await $.pumpWidgetAndSettle(
-        MaterialApp(
-          home: Scaffold(
-            appBar: AppBar(title: const Text('app')),
-            backgroundColor: Colors.blue,
-          ),
-        ),
-      );
+  patrolSetUp(() {
+    // Smoke test for https://github.com/leancodepl/patrol/issues/2021
+    expect(2 + 2, equals(4));
+  });
 
-      expect($('app'), findsOneWidget);
-      if (!Platform.isMacOS) {
-        await $.native.pressHome();
-      }
+  patrol(
+    'counter state is the same after going to Home and switching apps',
+    ($) async {
+      await createApp($);
+
+      await $(FloatingActionButton).tap();
+      expect($(#counterText).text, '1');
+
+      await $(#textField).enterText('Hello, Flutter!');
+      expect($('Hello, Flutter!'), findsOneWidget);
+
+      await $.native.pressHome();
+      await $.native.openApp();
+
+      expect($(#counterText).text, '1');
+      await $(FloatingActionButton).tap();
+
+      expect($(#counterText).text, '2');
+      expect($('Hello, Flutter!'), findsOneWidget);
     },
   );
 }
