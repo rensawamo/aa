@@ -1,6 +1,6 @@
 ### patrol ビルド
 ```sh
-$  patrol test --target integration_test/integration_test.dart
+$  patrol test -t  integration_test/example_test.dart
 ```
 
 ```sh
